@@ -1,4 +1,4 @@
-const API=import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API=import.meta.env.VITE_API_URL || 'https://main.d1a8ph253dil6n.amplifyapp.com/api';
 async function request(path, options={}){
   const token=localStorage.getItem('rekyc_admin_token');
   const res=await fetch(`${API}${path}`,{...options,headers:{'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{}) ,...(options.headers||{})}});
