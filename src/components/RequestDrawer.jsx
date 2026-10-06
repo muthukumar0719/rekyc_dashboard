@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {X,CheckCircle2,XCircle,UserRound,FileSignature,ScanFace,Banknote,MapPin,Mail,Phone,Users,Landmark,FileText} from 'lucide-react';
 import {api} from '../api';
 import {StatusBadge,CheckPill} from './StatusBadge';
+import SignedPdfs from './SignedPdfs';
 const pretty=(v)=>v===null||v===undefined||v===''?'—':typeof v==='object'?JSON.stringify(v):String(v);
 const iconFor=(type)=>({mobile:Phone,email:Mail,address:MapPin,income:Banknote,bank:Landmark,nominee:Users,ddpi:FileSignature}[type]||FileText);
 export default function RequestDrawer({id,onClose,onChanged}){const [data,setData]=useState(null),[remarks,setRemarks]=useState(''),[busy,setBusy]=useState(false);useEffect(()=>{if(id)api.detail(id).then(setData)},[id]);if(!id)return null;const action=async(kind)=>{if(kind==='reject'&&!remarks.trim())return alert('Remarks are required for rejection.');setBusy(true);try{await api[kind](id,remarks);onChanged();onClose()}catch(e){alert(e.message)}finally{setBusy(false)}};const r=data?.request;const type=data?.change?.type;const Icon=iconFor(type);
@@ -10,6 +11,7 @@ export default function RequestDrawer({id,onClose,onChanged}){const [data,setDat
   <section><h4><UserRound size={17}/> Client & request</h4><div className="kv-grid"><div><span>Client Code</span><b>{pretty(r.client_code)}</b></div><div><span>Created</span><b>{r.created_at?new Date(r.created_at).toLocaleString():'—'}</b></div><div><span>Operation ID</span><b>{pretty(r.operation_id)}</b></div><div><span>Last Updated</span><b>{r.updated_at?new Date(r.updated_at).toLocaleString():'—'}</b></div></div></section>
   <section><h4>Changed data</h4><div className="compare"><div className="old"><span>EXISTING VALUE</span><p>{pretty(data.change.oldValue)}</p></div><div className="arrow">→</div><div className="new"><span>REQUESTED VALUE</span><p>{pretty(data.change.newValue)}</p></div></div></section>
   <section><h4>Verification checks</h4><div className="checks"><CheckPill label="OTP" ok={data.verifications.otp}/><CheckPill label="IPV" ok={data.verifications.ipv} pending={!data.verifications.ipv}/><CheckPill label="eSign" ok={data.verifications.esign} pending={!data.verifications.esign}/><CheckPill label="DigiLocker" ok={data.verifications.digilocker} pending={!data.verifications.digilocker}/><CheckPill label="Penny Drop" ok={data.verifications.pennyDrop} pending={!data.verifications.pennyDrop}/></div></section>
+  <SignedPdfs id={id}/>
   <section><h4>Admin remarks</h4><textarea value={remarks} onChange={e=>setRemarks(e.target.value)} placeholder="Add verification notes / rejection reason..." rows="4"/></section>
   <details><summary>Technical / raw database fields</summary><div className="raw-grid">{Object.entries(r).map(([k,v])=><div key={k}><span>{k}</span><code>{pretty(v)}</code></div>)}</div></details>
   <div className="drawer-actions"><button className="reject-btn" disabled={busy} onClick={()=>action('reject')}><XCircle size={18}/> Reject</button><button className="verify-btn" disabled={busy} onClick={()=>action('verify')}><CheckCircle2 size={18}/> Verify & Submit</button></div>
