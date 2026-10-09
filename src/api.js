@@ -14,6 +14,7 @@ export const api={
  detail:(id)=>request(`/admin/requests/${id}`),
  verify:(id,remarks)=>request(`/admin/requests/${id}/verify`,{method:'POST',body:JSON.stringify({remarks})}),
  skipPayment:(id)=>request(`/admin/requests/${id}/skip-payment`,{method:'POST'}),
+ complete:(id)=>request(`/admin/requests/${id}/complete`,{method:'POST'}),
  reject:(id,remarks)=>request(`/admin/requests/${id}/reject`,{method:'POST',body:JSON.stringify({remarks})}),
  signedPdfList:()=>request('/admin/esigned-pdfs'),
  signedPdfs:(id)=>request(`/admin/esigned-pdfs/${id}`),

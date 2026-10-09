@@ -20,3 +20,4 @@
 .signed-pdf-compact{display:flex;flex-direction:column;gap:4px;margin:2px 0}.signed-pdf-compact small{font-size:11px;font-weight:700;color:var(--muted)}
 .signed-pdf-compact .signed-pdf-actions{flex-wrap:nowrap}.signed-pdf-compact .pdf-btn{padding:7px 10px;white-space:nowrap}
 .pdf-pending{font-size:12px;color:var(--muted);white-space:nowrap}
+.type-pill.complete{background:#e9fbf2;color:#08774a}.complete-btn{color:#08774a;white-space:nowrap}.complete-btn:hover{background:#e9fbf2}.complete-btn:disabled{opacity:.6;cursor:wait}
