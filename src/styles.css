@@ -21,3 +21,4 @@
 .signed-pdf-compact .signed-pdf-actions{flex-wrap:nowrap}.signed-pdf-compact .pdf-btn{padding:7px 10px;white-space:nowrap}
 .pdf-pending{font-size:12px;color:var(--muted);white-space:nowrap}
 .export-btn{white-space:nowrap;padding:0 16px}.export-btn:disabled{opacity:.5;cursor:not-allowed}
+.pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 23px;border-top:1px solid #eff1f5;color:#465268;font-size:14px}.pager div{display:flex;align-items:center;gap:12px}.pager .view-btn:disabled{opacity:.5;cursor:not-allowed}
