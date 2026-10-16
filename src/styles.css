@@ -22,3 +22,5 @@
 .pdf-pending{font-size:12px;color:var(--muted);white-space:nowrap}
 .export-btn{white-space:nowrap;padding:0 16px}.export-btn:disabled{opacity:.5;cursor:not-allowed}
 .pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 23px;border-top:1px solid #eff1f5;color:#465268;font-size:14px}.pager div{display:flex;align-items:center;gap:12px}.pager .view-btn:disabled{opacity:.5;cursor:not-allowed}
+
+.decided-note{display:flex;align-items:center;gap:8px;margin-top:18px;padding:14px 16px;border-radius:14px;font-weight:700}.decided-note.verified{background:#e8f8ef;color:#13804b}.decided-note.rejected{background:#fdecec;color:#c33}
