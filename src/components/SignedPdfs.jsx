@@ -10,7 +10,8 @@ export function SignedPdfButtons({id,pdfs,compact}){const [busy,setBusy]=useStat
   {preview&&<div className="pdf-preview-backdrop" onMouseDown={e=>{if(e.target===e.currentTarget)setPreview(null)}}><div className="pdf-preview"><div className="pdf-preview-head"><b>{preview.label} — {preview.file_name}</b><button className="pdf-btn primary" disabled={!!busy} onClick={()=>open(preview,'download')}><Download size={16}/> Download</button><button className="icon-btn" onClick={()=>setPreview(null)}><X/></button></div><iframe title="Document preview" src={preview.url}/></div></div>}
  </>
 }
-export default function SignedPdfs({id}){const [pdfs,setPdfs]=useState([]);useEffect(()=>{setPdfs([]);if(id)api.signedPdfs(id).then(d=>setPdfs(d.signed_pdfs||[])).catch(()=>setPdfs([]))},[id]);
- if(!pdfs.length)return null;
- return <section><h4><FileCheck2 size={17}/> Documents</h4><div className="signed-pdfs"><SignedPdfButtons id={id} pdfs={pdfs}/></div></section>
+export default function SignedPdfs({id}){const [pdfs,setPdfs]=useState([]),[lookup,setLookup]=useState(null);useEffect(()=>{setPdfs([]);setLookup(null);if(id)api.signedPdfs(id).then(d=>{setPdfs(d.signed_pdfs||[]);setLookup(d.lookup||null)}).catch(()=>setPdfs([]))},[id]);
+ const missing=lookup?.missing||[];if(!pdfs.length&&!lookup?.reason&&!missing.length)return null;
+ // Explains an empty/partial list: no PAN for the client, or which S3 paths were checked for each missing document.
+ return <section><h4><FileCheck2 size={17}/> Documents</h4>{pdfs.length>0&&<div className="signed-pdfs"><SignedPdfButtons id={id} pdfs={pdfs}/></div>}{(lookup?.reason||missing.length>0)&&<div className="docs-missing">{lookup.reason?<p>{lookup.reason}</p>:missing.map(m=><p key={m.label}><b>{m.label}</b> not found. Looked in: {m.looked_in.join(' · ')}</p>)}</div>}</section>
 }
