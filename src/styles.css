@@ -33,3 +33,4 @@
 .modal-body textarea{width:100%;box-sizing:border-box;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font:inherit;resize:vertical}
 .modal-actions{display:flex;justify-content:flex-end;gap:10px}.delete-btn{display:flex;align-items:center;gap:6px;border:0;border-radius:11px;padding:9px 14px;background:#c8334f;color:#fff;font-weight:800;cursor:pointer}.delete-btn:disabled{opacity:.6;cursor:not-allowed}
 .modal-body.logs{padding:0}.modal-body.logs .table-wrap{max-height:70vh}.log-reason{min-width:220px;white-space:pre-wrap}
+.filters{flex-wrap:wrap}.date-range{display:flex;gap:8px}.date-range label{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#6b7690;border:1px solid #e0e5ef;border-radius:11px;padding:0 10px;background:#fff}.date-range input{border:0;outline:0;padding:10px 0;font:inherit;color:#465268;background:transparent}
