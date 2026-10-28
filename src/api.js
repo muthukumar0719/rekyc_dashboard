@@ -17,6 +17,7 @@ export const api={
  deleteRequest:(id,reason)=>request(`/admin/requests/${id}/delete`,{method:'POST',body:JSON.stringify({reason})}),
  deleteLogs:()=>request('/admin/delete-logs'),
  payments:()=>request('/admin/payments'),
+ stampPaperStats:()=>request('/admin/stamp-papers/stats'),
  reject:(id,remarks)=>request(`/admin/requests/${id}/reject`,{method:'POST',body:JSON.stringify({remarks})}),
  signedPdfList:()=>request('/admin/esigned-pdfs'),
  signedPdfs:(id)=>request(`/admin/esigned-pdfs/${id}`),

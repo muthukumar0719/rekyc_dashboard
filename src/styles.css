@@ -70,3 +70,10 @@
  .stats-grid.five{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){.stats-grid.five{grid-template-columns:1fr}}
+/* Dashboard: stamp paper stock */
+.stamp-section{margin-top:28px}.stamp-section h2{font-size:18px;margin:0 0 14px}
+.stamp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stamp-card{background:#fff;border:1px solid #eaedf4;border-radius:16px;padding:26px 28px;box-shadow:0 8px 24px rgba(25,42,86,.05);display:grid;gap:10px}
+.stamp-card span{color:#5d677a;font-size:14px}.stamp-card strong{font-size:34px;color:#1c2333}
+.stamp-card.used strong{color:#dc3d3d}.stamp-card.available strong{color:#16a05d}
+@media(max-width:900px){.stamp-grid{grid-template-columns:1fr}}
