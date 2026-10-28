@@ -1,2 +1,2 @@
 import React from 'react';
-export default function StatCard({label,value,icon:Icon,sub,tone='blue'}){return <div className={`stat-card ${tone}`}><div className="stat-icon"><Icon size={20}/></div><div><span>{label}</span><strong>{value??0}</strong><small>{sub}</small></div></div>}
+export default function StatCard({label,value,icon:Icon,sub,tone='blue',active,onClick}){return <div className={`stat-card ${tone}${onClick?' clickable':''}${active?' active':''}`} onClick={onClick} role={onClick?'button':undefined} tabIndex={onClick?0:undefined} onKeyDown={onClick?e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onClick()}}:undefined}><div className="stat-icon"><Icon size={20}/></div><div><span>{label}</span><strong>{value??0}</strong><small>{sub}</small></div></div>}

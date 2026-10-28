@@ -12,9 +12,10 @@ export function DeleteDialog({row,onClose,onDeleted}){const [reason,setReason]=u
   <div className="modal-actions"><button className="view-btn" disabled={busy} onClick={onClose}>Cancel</button><button className="delete-btn" disabled={busy} onClick={submit}><Trash2 size={16}/> {busy?'Deleting...':'Delete'}</button></div>
  </div></Modal>
 }
-export function DeleteLogs({onClose}){const [items,setItems]=useState(null),[error,setError]=useState('');useEffect(()=>{api.deleteLogs().then(d=>setItems(d.items||[])).catch(e=>setError(e.message))},[]);
- return <Modal title="Delete logs" icon={History} onClose={onClose} wide><div className="modal-body logs">
+export function DeleteLogs({onClose}){return <Modal title="Delete logs" icon={History} onClose={onClose} wide><div className="modal-body logs"><DeleteLogsTable/></div></Modal>}
+export function DeleteLogsTable(){const [items,setItems]=useState(null),[error,setError]=useState('');useEffect(()=>{api.deleteLogs().then(d=>setItems(d.items||[])).catch(e=>setError(e.message))},[]);
+ return <>
   {error?<div className="error-box">{error}</div>:!items?<div className="loading">Loading...</div>:!items.length?<div className="empty">No requests have been deleted.</div>:
   <div className="table-wrap"><table><thead><tr><th>Deleted at</th><th>Client</th><th>Request ID</th><th>Change Type</th><th>Deleted by</th><th>Reason</th></tr></thead><tbody>{items.map(l=><tr key={l.id}><td style={{whiteSpace:'nowrap'}}>{l.deleted_at?new Date(l.deleted_at).toLocaleString():'—'}</td><td><b>{l.client_code||'—'}</b></td><td>{l.request_id}</td><td>{l.change_types||'—'}</td><td>{l.deleted_by||'—'}</td><td className="log-reason">{l.reason}</td></tr>)}</tbody></table></div>}
- </div></Modal>
+ </>
 }
