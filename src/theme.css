@@ -1,0 +1,109 @@
+/* Light / dark theme. The light colours live in styles.css; this file adds the theme toggle and overrides them when <html data-theme="dark">. */
+.theme-toggle{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid #e0e5ef;background:#fff;border-radius:999px;color:#2a3347;cursor:pointer;white-space:nowrap}
+.theme-toggle:hover{border-color:#cfc8fb}
+@media(max-width:700px){.admin-chip span{display:none}}
+
+html[data-theme=dark]{color-scheme:dark;--border:#2a3047;--muted:#9aa3b8;color:#e6e9f2;background:#0f1220}
+html[data-theme=dark] body{background:radial-gradient(circle at 15% 35%,rgba(70,52,255,.10) 0,transparent 28%),radial-gradient(circle at 90% 50%,rgba(255,85,117,.07) 0,transparent 27%),#0f1220;color:#e6e9f2}
+html[data-theme=dark] .topbar{background:rgba(19,23,38,.94);border-bottom-color:#232840}
+html[data-theme=dark] .brand>div{border-left-color:#2a3047}
+html[data-theme=dark] .brand span,html[data-theme=dark] .admin-chip small{color:#8b94ab}
+html[data-theme=dark] :is(.bell,.icon-btn,.refresh,.logout,.view-btn,.reject-btn,.pdf-btn,.theme-toggle,.sidebar-close,.menu-btn){background:#1a1f31;border-color:#2e3550;color:#d5daea}
+html[data-theme=dark] .theme-toggle:hover{border-color:#5b4bb5}
+html[data-theme=dark] .bell i{border-color:#1a1f31}
+html[data-theme=dark] .admin-chip{background:#1a1f31}
+html[data-theme=dark] .view-btn{color:#a5a0ff}
+html[data-theme=dark] .view-btn:hover{background:#252a45}
+html[data-theme=dark] .view-btn.danger,html[data-theme=dark] .reject-btn,html[data-theme=dark] .modal-body .req{color:#ff7b93}
+html[data-theme=dark] .view-btn.danger:hover{background:#3a1c26}
+html[data-theme=dark] .skip-btn{color:#f0b35e}
+html[data-theme=dark] .skip-btn:hover{background:#3a2a14}
+html[data-theme=dark] .page-title p{color:#a99cff}
+html[data-theme=dark] :is(.page-title span,.card-toolbar p,.empty,.loading){color:#8b94ab}
+
+/* Surfaces */
+html[data-theme=dark] :is(.sidebar,.content-card,.stat-card,.stamp-card,.upload-card,.drawer,.drawer-head,.modal-card,.pdf-preview){background:#161a2a;border-color:#252b42;box-shadow:none}
+html[data-theme=dark] :is(.sidebar-logo,.card-toolbar,.filters,.upload-head,.pdf-preview-head,.drawer section,.drawer details){border-color:#252b42}
+/* The logo has dark lettering, so it keeps a light plate. */
+html[data-theme=dark] .sidebar-logo img{background:#fff;border-radius:12px;padding:4px 10px}
+html[data-theme=dark] .nav-item{color:#cfd5e6}
+html[data-theme=dark] .nav-item:hover{background:#1f2440}
+html[data-theme=dark] .nav-item.active{background:#2a2350;color:#b9a6ff}
+html[data-theme=dark] .stat-card span,html[data-theme=dark] .stamp-card span{color:#9aa3b8}
+html[data-theme=dark] .stat-card small{color:#7c859b}
+html[data-theme=dark] .stamp-card strong{color:#eef0f7}
+html[data-theme=dark] .stamp-card.used strong{color:#ff6b6b}
+html[data-theme=dark] .stamp-card.available strong{color:#3ccf86}
+html[data-theme=dark] .stat-card.clickable:hover{border-color:#4a3f8f}
+html[data-theme=dark] .stat-card.active{border-color:#8b6cf0;box-shadow:0 0 0 1px #8b6cf0}
+html[data-theme=dark] .stat-card.blue .stat-icon{background:#24245a;color:#a5a0ff}
+html[data-theme=dark] .stat-card.green .stat-icon{background:#123a2a;color:#3ccf86}
+html[data-theme=dark] .stat-card.amber .stat-icon{background:#3a2e12;color:#f0b84a}
+html[data-theme=dark] .stat-card.red .stat-icon{background:#3d1a24;color:#ff7b93}
+html[data-theme=dark] .stat-card.gray .stat-icon{background:#262b3d;color:#aab2c6}
+
+/* Form controls */
+html[data-theme=dark] :is(.search,.select-wrap,.date-range label,.input-wrap){background:#1a1f31;border-color:#2e3550;color:#9aa3b8}
+html[data-theme=dark] :is(.search input,.date-range input,.select-wrap select,.input-wrap input){background:transparent;color:#e6e9f2}
+html[data-theme=dark] select option{background:#1a1f31;color:#e6e9f2}
+html[data-theme=dark] :is(.drawer textarea,.modal-body textarea){background:#11152a;border-color:#2e3550;color:#e6e9f2}
+html[data-theme=dark] .lock-rule{background:#221f45;color:#bdb4ff}
+html[data-theme=dark] .lock-rule small{color:#9a92d6}
+
+/* Tables */
+html[data-theme=dark] th{background:#1a1f31;color:#9aa3b8;border-bottom-color:#2a3047}
+html[data-theme=dark] td{border-bottom-color:#222842}
+html[data-theme=dark] td small{color:#7c859b}
+html[data-theme=dark] tbody tr:hover td{background:#1a1f33}
+html[data-theme=dark] .value-cell,html[data-theme=dark] .summary-cell span{color:#b4bccf}
+html[data-theme=dark] .value-cell .val-obj dt{color:#8b94ab}
+html[data-theme=dark] .value-cell .val-obj dd{color:#dfe3ee}
+html[data-theme=dark] .pager{border-top-color:#252b42;color:#b4bccf}
+
+/* Pills and badges */
+html[data-theme=dark] .type-pill{background:#25224f;color:#b3a9ff}
+html[data-theme=dark] .type-pill.bank{background:#132f40;color:#6cc3ec}
+html[data-theme=dark] .type-pill.nominee{background:#3a1a2b;color:#f08ab5}
+html[data-theme=dark] :is(.type-pill.address,.type-pill.skipped){background:#3a2a14;color:#f0b35e}
+html[data-theme=dark] .status-badge.pending{background:#3a2e12;color:#f0c45a}
+html[data-theme=dark] .status-badge.verified{background:#123a2a;color:#4fd894}
+html[data-theme=dark] .status-badge.rejected{background:#3d1a24;color:#ff7b93}
+html[data-theme=dark] .status-badge.progress{background:#232a55;color:#a5aefc}
+html[data-theme=dark] .check-pill{background:#21263a;color:#9aa3b8}
+html[data-theme=dark] .check-pill.ok{background:#123a2a;color:#4fd894}
+html[data-theme=dark] .check-pill.wait{background:#3a2e12;color:#f0c45a}
+
+/* Drawer, modals, notices */
+html[data-theme=dark] .drawer-summary{background:linear-gradient(120deg,#221f45,#3a1a2b)}
+html[data-theme=dark] :is(.drawer-head span,.drawer-summary small,.drawer-summary p,.arrow,.kv-grid span,.compare span,.raw-grid span){color:#8b94ab}
+html[data-theme=dark] .kv-grid div,html[data-theme=dark] .compare .old{background:#1a1f31}
+html[data-theme=dark] .compare>div:not(.arrow),html[data-theme=dark] .raw-grid div{border-color:#2a3047}
+html[data-theme=dark] .compare .new{background:#11301f;border-color:#1f5a3b}
+html[data-theme=dark] .drawer-actions{background:rgba(22,26,42,.96);border-top-color:#252b42}
+html[data-theme=dark] .modal-body p,html[data-theme=dark] .dummy-note{color:#c3c9d8}
+html[data-theme=dark] .error-box{background:#3d1a24;color:#ff9aac}
+html[data-theme=dark] .decided-note.verified{background:#123a2a;color:#4fd894}
+html[data-theme=dark] .decided-note.rejected{background:#3d1a24;color:#ff7b93}
+html[data-theme=dark] :is(.docs-missing,.upload-list.warn){background:#33290f;color:#f0c45a}
+html[data-theme=dark] .upload-list.bad{background:#3d1a24;color:#ff9aac}
+html[data-theme=dark] .signed-pdf{border-color:#2a3047}
+
+/* Upload page */
+html[data-theme=dark] :is(.upload-head p,.upload-note,.dropzone small,.upload-rules){color:#9aa3b8}
+html[data-theme=dark] .upload-rules b,html[data-theme=dark] .upload-selected{color:#dfe3ee}
+html[data-theme=dark] .upload-selected{border-color:#2e3550}
+html[data-theme=dark] .upload-icon{background:#2a2350;color:#b9a6ff}
+html[data-theme=dark] .dropzone{background:#1a1f31;border-color:#363d5c;color:#b9a6ff}
+html[data-theme=dark] .dropzone:hover,html[data-theme=dark] .dropzone.drag{background:#211d40;border-color:#7c5ce6}
+html[data-theme=dark] .dropzone b,html[data-theme=dark] .upload-progress span{color:#eef0f7}
+html[data-theme=dark] .dropzone b span{color:#b9a6ff}
+html[data-theme=dark] .upload-progress{background:#232840}
+html[data-theme=dark] .upload-btn:disabled{background:#4a3f8f;color:#b8b2d8}
+html[data-theme=dark] .upload-result .ok{color:#4fd894}
+
+/* Login */
+html[data-theme=dark] .login-shell{background:linear-gradient(145deg,#0f1220,#151a2c)}
+html[data-theme=dark] .login-card{background:rgba(22,26,42,.9);border-color:#252b42}
+html[data-theme=dark] .login-card>p{color:#9aa3b8}
+html[data-theme=dark] .login-logo{background:#fff;border-radius:14px;padding:6px 12px}
+html[data-theme=dark] .login-badge{background:#221f45;color:#bdb4ff}
