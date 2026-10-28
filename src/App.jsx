@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage';
 import ClientsPage from './pages/ClientsPage';
 import PaymentsPage from './pages/PaymentsPage';
 import TrashPage from './pages/TrashPage';
+import UploadPage from './pages/UploadPage';
 import ComingSoonPage from './pages/ComingSoonPage';
 
 const isLoggedIn=()=>Boolean(localStorage.getItem('rekyc_admin_token'));
@@ -17,7 +18,7 @@ export default function App(){
    <Route path="/dashboard" element={<DashboardPage/>}/>
    <Route path="/clients" element={<ClientsPage/>}/>
    <Route path="/payments" element={<PaymentsPage/>}/>
-   <Route path="/upload" element={<ComingSoonPage title="Upload" section="UPLOAD"/>}/>
+   <Route path="/upload" element={<UploadPage/>}/>
    <Route path="/users" element={<ComingSoonPage title="User Management" section="USERS"/>}/>
    <Route path="/audit-logs" element={<ComingSoonPage title="Audit Log" section="AUDIT"/>}/>
    <Route path="/trash" element={<TrashPage/>}/>

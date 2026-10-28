@@ -77,3 +77,22 @@
 .stamp-card span{color:#5d677a;font-size:14px}.stamp-card strong{font-size:34px;color:#1c2333}
 .stamp-card.used strong{color:#dc3d3d}.stamp-card.available strong{color:#16a05d}
 @media(max-width:900px){.stamp-grid{grid-template-columns:1fr}}
+/* Upload: stamp paper */
+.upload-card{max-width:800px;background:#fff;border:1px solid #e7eaf2;border-radius:18px;box-shadow:0 12px 35px rgba(29,46,93,.06)}
+.upload-head{display:flex;align-items:center;gap:16px;padding:24px 26px;border-bottom:1px solid #eef1f5}.upload-head h2{margin:0;font-size:18px}.upload-head p{margin:4px 0 0;color:#6b7690;font-size:14px}
+.upload-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:#efeafe;color:#6d3fe0;flex:0 0 auto}
+.upload-body{padding:24px 26px;display:flex;flex-direction:column;gap:14px}
+.dropzone{border:1.5px dashed #dcdff0;background:#f6f6fb;border-radius:14px;padding:38px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;cursor:pointer;color:#6d3fe0;transition:border-color .15s,background .15s}
+.dropzone b{color:#1c2333;font-size:16px}.dropzone b span{color:#6d3fe0;font-weight:600}.dropzone small{color:#6b7690;font-size:13px}
+.dropzone:hover,.dropzone.drag{border-color:#9b7cf0;background:#f3efff}.dropzone.disabled{opacity:.6;cursor:not-allowed}
+.upload-rules{margin:0;padding-left:20px;color:#5d677a;font-size:14px;line-height:1.9}.upload-rules b{color:#3a465c}
+.upload-note{margin:0;color:#6b7690;font-size:13px}
+.upload-selected{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #e0e5ef;border-radius:12px;color:#3a465c;font-size:14px}.upload-selected span{flex:1;overflow-wrap:anywhere}
+.upload-list{border-radius:12px;padding:10px 14px;font-size:13px}.upload-list summary{cursor:pointer;font-weight:700;display:flex;align-items:center;gap:6px}
+.upload-list ul{margin:8px 0 0;padding-left:18px;max-height:220px;overflow:auto;line-height:1.7}
+.upload-list.warn{background:#fff8e6;color:#7a5a00}.upload-list.bad{background:#fdecec;color:#a52a2a}
+.upload-progress{position:relative;height:26px;border-radius:999px;background:#f0f1f6;overflow:hidden}.upload-progress div{height:100%;background:var(--grad);transition:width .2s}
+.upload-progress span{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;font-weight:700;color:#1c2333}
+.upload-result{display:flex;flex-direction:column;gap:8px}.upload-result .ok{display:flex;align-items:center;gap:8px;margin:0;font-weight:700;color:#13804b}
+.upload-actions{display:flex;justify-content:flex-end}
+.upload-btn{border:0;border-radius:12px;padding:12px 22px;background:#7c5ce6;color:#fff;font-weight:600;font-size:16px;cursor:pointer}.upload-btn:disabled{background:#b3a1f0;cursor:not-allowed}
