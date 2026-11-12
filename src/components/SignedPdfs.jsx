@@ -1,8 +1,8 @@
 import React,{useEffect,useState} from 'react';
 import {FileCheck2,Eye,Download,X} from 'lucide-react';
 import {api} from '../api';
-// Client documents from S3 (Client/Upload/<folder>/<PAN>.<ext>): the API returns only the files that exist and apply to the
-// categories this client changed (eSigned, Modification ReKYC, Nominee, DDPI PDFs, Aadhaar XML). Preview/download use a short-lived presigned URL.
+// Client documents from S3 (Client/Upload/<folder>/<PAN>[_<anything>].<ext>): the API returns only the files that exist and apply to the
+// categories this client changed (eSigned, Personal Changes, KRA, Modification, Bank, Nominee, DDPI PDFs, Aadhaar XML). Preview/download use a short-lived presigned URL.
 export function SignedPdfButtons({id,pdfs,compact}){const [busy,setBusy]=useState(null),[preview,setPreview]=useState(null);
  const open=async(p,mode)=>{setBusy(`${p.form_type}:${mode}`);try{const d=await api.signedPdfUrl(id,p.form_type,mode);if(mode==='preview')setPreview({...p,url:d.url,file_name:d.file_name});else location.href=d.url}catch(e){alert(e.message)}finally{setBusy(null)}};
  const many=pdfs.length>1;
