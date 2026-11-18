@@ -4,7 +4,7 @@ import {api} from '../api';
 import StatCard from '../components/StatCard';
 import {downloadXlsx} from '../utils/exportXlsx';
 // Payment statuses come from the server (/admin/payments): success (paid), pending (created / in flight), failed, skipped (by admin or client).
-const STATUSES={success:{label:'Success',cls:'verified'},pending:{label:'Pending',cls:'pending'},failed:{label:'Failed',cls:'rejected'},skipped:{label:'Skipped',cls:'progress'}};
+const STATUSES={success:{label:'Success',cls:'verified'},pending:{label:'Pending',cls:'pending'},failed:{label:'Failed',cls:'rejected'},skipped:{label:'Skipped',cls:'progress'},ledger:{label:'Debit from ledger',cls:'progress'}};
 const money=n=>`₹${Number(n||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
 const fmtDate=v=>v?new Date(v).toLocaleString('en-IN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}):'—';
 const payDate=p=>p.paid_at||p.created_at;
