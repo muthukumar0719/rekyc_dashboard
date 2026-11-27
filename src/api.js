@@ -13,6 +13,7 @@ export const api={
  requests:(qs='')=>request(`/admin/requests${qs}`),
  detail:(id)=>request(`/admin/requests/${id}`),
  verify:(id,remarks)=>request(`/admin/requests/${id}/verify`,{method:'POST',body:JSON.stringify({remarks})}),
+ refreshEsign:(id)=>request(`/admin/requests/${id}/esign-refresh`,{method:'POST'}),
  skipPayment:(id)=>request(`/admin/requests/${id}/skip-payment`,{method:'POST'}),
  deleteRequest:(id,reason)=>request(`/admin/requests/${id}/delete`,{method:'POST',body:JSON.stringify({reason})}),
  deleteLogs:()=>request('/admin/delete-logs'),
