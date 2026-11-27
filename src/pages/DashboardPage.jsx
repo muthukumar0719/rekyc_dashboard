@@ -10,7 +10,7 @@ export default function DashboardPage(){const [stats,setStats]=useState({});cons
  {error&&<div className="error-box" style={{marginBottom:16}}>Could not load stats: {error}</div>}
  <div className="stats-grid three"><StatCard label="Total Account Count" value={stats.totalAccounts} icon={Files} sub="All ReKYC accounts" tone="blue"/><StatCard label="Modified Account Count" value={stats.modifiedAccounts} icon={CheckCircle2} sub="Accounts with a change request" tone="green"/><StatCard label="Unmodified Account Count" value={stats.unmodifiedAccounts} icon={Clock3} sub="Accounts with no changes" tone="amber"/></div>
  <section className="stamp-section"><h2>Stamp Paper</h2>
-  {stampError?<div className="error-box">Could not load stamp papers: {stampError}</div>:<div className="stamp-grid"><div className="stamp-card"><span>Total Accounts</span><strong>{fmt(stamp.total)}</strong></div><div className="stamp-card used"><span>Used</span><strong>{fmt(stamp.used)}</strong></div><div className="stamp-card available"><span>Available</span><strong>{fmt(stamp.available)}</strong></div></div>}
+  {stampError?<div className="error-box">Could not load stamp papers: {stampError}</div>:<div className="stamp-grid"><div className="stamp-card"><span>Total Stamp Papers</span><strong>{fmt(stamp.total)}</strong></div><div className="stamp-card available"><span>Free</span><strong>{fmt(stamp.free ?? stamp.available)}</strong></div><div className="stamp-card reserved"><span>Reserved (DDPI in progress)</span><strong>{fmt(stamp.reserved)}</strong></div><div className="stamp-card used"><span>Used</span><strong>{fmt(stamp.used)}</strong></div></div>}
  </section>
  </main>
 }

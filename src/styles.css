@@ -72,11 +72,12 @@
 @media(max-width:560px){.stats-grid.five{grid-template-columns:1fr}}
 /* Dashboard: stamp paper stock */
 .stamp-section{margin-top:28px}.stamp-section h2{font-size:18px;margin:0 0 14px}
-.stamp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stamp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .stamp-card{background:#fff;border:1px solid #eaedf4;border-radius:16px;padding:26px 28px;box-shadow:0 8px 24px rgba(25,42,86,.05);display:grid;gap:10px}
 .stamp-card span{color:#5d677a;font-size:14px}.stamp-card strong{font-size:34px;color:#1c2333}
-.stamp-card.used strong{color:#dc3d3d}.stamp-card.available strong{color:#16a05d}
-@media(max-width:900px){.stamp-grid{grid-template-columns:1fr}}
+.stamp-card.used strong{color:#dc3d3d}.stamp-card.available strong{color:#16a05d}.stamp-card.reserved strong{color:#d98a1a}
+@media(max-width:900px){.stamp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stamp-grid{grid-template-columns:1fr}}
 /* Upload: stamp paper */
 .upload-card{max-width:800px;background:#fff;border:1px solid #e7eaf2;border-radius:18px;box-shadow:0 12px 35px rgba(29,46,93,.06)}
 .upload-head{display:flex;align-items:center;gap:16px;padding:24px 26px;border-bottom:1px solid #eef1f5}.upload-head h2{margin:0;font-size:18px}.upload-head p{margin:4px 0 0;color:#6b7690;font-size:14px}
